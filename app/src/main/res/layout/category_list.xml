@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/mainTextView"
+            android:text="Enter the fields:"
+            android:textSize="25dp"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"/>
+
+    <RadioGroup
+            android:id="@+id/catRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainTextView"
+            android:layout_alignStart="@+id/mainTextView">
+
+        <RadioButton
+                android:id="@+id/allRadioButton"
+                android:text="All"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"/>
+
+        <RadioButton
+                android:id="@+id/topRadioButton"
+                android:text="Top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/allRadioButton"
+                android:layout_alignStart="@+id/allRadioButton" />
+
+        <RadioButton
+                android:id="@+id/politicsRadioButton"
+                android:text="Politics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/topRadioButton"
+                android:layout_alignStart="@+id/topRadioButton" />
+
+        <RadioButton
+                android:id="@+id/businessRadioButton"
+                android:text="Business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/politicsRadioButton"
+                android:layout_alignStart="@+id/politicsRadioButton" />
+
+        <RadioButton
+                android:id="@+id/sportRadioButton"
+                android:text="Sport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/businessRadioButton"
+                android:layout_alignStart="@+id/businessRadioButton" />
+
+    </RadioGroup>
+
+    <Button
+            android:id="@+id/chooseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose"
+            android:layout_marginTop="53dp"
+            android:layout_below="@+id/catRadioGroup"
+            android:layout_alignStart="@+id/catRadioGroup" />
+</LinearLayout>
