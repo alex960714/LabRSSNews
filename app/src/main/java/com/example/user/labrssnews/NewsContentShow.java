@@ -7,10 +7,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.List;
 
@@ -34,26 +32,9 @@ public class NewsContentShow extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         List<NewsRecord> data = NewsSource.getContent((Integer) this.getArguments().get(ARG_SECTION_NUMBER));
 
-        View topNewsHolder = rootView.findViewById(R.id.topNewsHolder);
-
-        if (data != null && !data.isEmpty()) {
-            NewsItem story = data.get(0);
-            ((TextView) topNewsHolder.findViewById(R.id.topNewsTitle)).setText(story.getTitle());
-            ((TextView) topNewsHolder.findViewById(R.id.topNewsDescriprion)).setText(story.getDescription());
-            ImageView topNewsImage = (ImageView) topNewsHolder.findViewById(R.id.topNewsImage);
-            topNewsImage.setImageBitmap(story.getImage());
-            topNewsHolder.setTag(story.getLink());
-
-            topNewsHolder.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    openWebView((String) v.getTag());
-                }
-            });
-        }
 
         ListView newsWall = (ListView) rootView.findViewById(R.id.newsWall);
-        NewsWallAdapter adapter = new NewsWallAdapter(data.subList(1, data.size() - 1), this);
+        NewsAdapter adapter = new NewsAdapter(data.subList(1, data.size() - 1), this);
         fixScrollListView(newsWall);
         setListViewHeightBasedOnChildren(newsWall);
 
@@ -63,7 +44,7 @@ public class NewsContentShow extends Fragment {
     }
 
     public void openWebView(String link) {
-        Intent intent = new Intent(getActivity(), WebBrowserActivity.class);
+        Intent intent = new Intent(getActivity(), ShowNewsActivity.class);
         intent.putExtra("link", link);
         startActivityForResult(intent, 0);
     }

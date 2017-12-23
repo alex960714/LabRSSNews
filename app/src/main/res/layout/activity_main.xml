@@ -36,17 +36,11 @@
     <ListView
             android:id="@+id/table"
             android:layout_width="match_parent"
-            android:layout_height="370dp"/>
+            android:layout_height="420dp"/>
 
     <Button
             android:id="@+id/categoryButton"
             android:text="Choose category"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <Button
-            android:id="@+id/refreshButton"
-            android:text="Refresh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
