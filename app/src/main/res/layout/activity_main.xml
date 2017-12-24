@@ -34,9 +34,9 @@
             tools:layout_constraintRight_creator="1" tools:layout_constraintLeft_creator="1">
 
     <ListView
-            android:id="@+id/table"
+            android:id="@+id/newsListView"
             android:layout_width="match_parent"
-            android:layout_height="420dp"/>
+            android:layout_height="420dp" />
 
     <Button
             android:id="@+id/categoryButton"

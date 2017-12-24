@@ -63,6 +63,8 @@ public class NewsAdapter extends BaseAdapter {
         return convertView;
     }
 
+
+
     private void setOnClickListener(View newsItem) {
         newsItem.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -40,6 +40,13 @@ public class Connection extends AsyncTask<String, Void, List<NewsRecord>> {
         return items;
     }
 
+    @Override
+    protected void onPostExecute(List<NewsRecord> feedItems) {
+        super.onPostExecute(feedItems);
+        NewsAdapter adapter = new NewsAdapter(MainActivity.class, feedItems);
+        lvMain.setAdapter(adapter);
+    }
+
     private String getContent(URL url) {
         String content = "";
         BufferedReader reader = null;
@@ -96,17 +103,9 @@ public class Connection extends AsyncTask<String, Void, List<NewsRecord>> {
                 String title = getItemElement(item, "title");
                 String description = getItemElement(item, "description");
                 String link = getItemElement(item, "link");
-                String imageUrl = ((Element) item).getElementsByTagName("media:thumbnail").item(0).
-                        getAttributes().getNamedItem("url").getTextContent();
 
                 NewsRecord newsRecord = new NewsRecord(title, description, link);
                 items.add(newsRecord);
-
-                try {
-                    newsRecord.setImage(getImage(new URL(imageUrl)));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();

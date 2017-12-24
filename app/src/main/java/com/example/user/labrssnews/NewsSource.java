@@ -11,29 +11,27 @@ public class NewsSource {
     public static final String BUSINESS = BASE_PATH + "business.html";
     public static final String SPORT = BASE_PATH + "sport.html";
 
-    public static List<NewsRecord> getContent(int pageNumber) {
+    public static void getContent(String pageNumber) {
         NewsSource content = new NewsSource();
         switch (pageNumber) {
-            case 0:
-                return content.downloadContent(ALL);
-            case 1:
-                return content.downloadContent(TOP);
-            case 2:
-                return content.downloadContent(POLITICS);
-            case 3:
-                return content.downloadContent(BUSINESS);
-            case 4:
-                return content.downloadContent(SPORT);
+            case "ALL":
+                content.downloadContent(ALL);
+            case "TOP":
+                content.downloadContent(TOP);
+            case "POLITICS":
+                content.downloadContent(POLITICS);
+            case "BUSINESS":
+                content.downloadContent(BUSINESS);
+            case "SPORT":
+                content.downloadContent(SPORT);
         }
-        return null;
     }
 
-    public List<NewsRecord> downloadContent(String url) {
+    public void downloadContent(String url) {
         try {
-            return new Connection().execute(url).get();
-        } catch (InterruptedException | ExecutionException e) {
+            new Connection().execute(url);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
     }
 }
