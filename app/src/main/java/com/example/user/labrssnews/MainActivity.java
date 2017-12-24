@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.sun.syndication.feed.synd.SyndEntry;
-import com.sun.syndication.feed.synd.SyndFeed;
-import com.sun.syndication.io.FeedException;
-import com.sun.syndication.io.SyndFeedInput;
-import com.sun.syndication.io.XmlReader;
+import com.rometools.rome.feed.synd.SyndEntry;
+import com.rometools.rome.feed.synd.SyndFeed;
+import com.rometools.rome.io.FeedException;
+import com.rometools.rome.io.SyndFeedInput;
+import com.rometools.rome.io.XmlReader;
 
 import java.io.IOException;
 import java.net.URL;
@@ -84,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
 
     public class NewsSource {
         private static final String BASE_PATH = "https://news.yandex.ru/";
-        public static final String ALL = BASE_PATH + "index.html";
-        public static final String TOP = BASE_PATH + "index.html";
-        public static final String POLITICS = BASE_PATH + "politics.html";
-        public static final String BUSINESS = BASE_PATH + "business.html";
-        public static final String SPORT = BASE_PATH + "sport.html";
+        public static final String ALL = BASE_PATH + "index";
+        public static final String TOP = BASE_PATH + "index";
+        public static final String POLITICS = BASE_PATH + "politics";
+        public static final String BUSINESS = BASE_PATH + "business";
+        public static final String SPORT = BASE_PATH + "sport";
 
         public NewsSource(String pageNumber) {
             switch (pageNumber) {

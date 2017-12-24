@@ -17,6 +17,7 @@ public class NewsAdapter extends BaseAdapter {
     private Context context;
     private TextView titleTextView;
     private TextView descriptionTextView;
+    private TextView linkTextView;
 
     public NewsAdapter(Context context, List<NewsRecord> items) {
         this.items = items;
@@ -47,8 +48,9 @@ public class NewsAdapter extends BaseAdapter {
         }
 
         NewsRecord newsRecord = items.get(position);
-        titleTextView = (TextView)v.findViewById(R.id.titleTextView);
+        titleTextView = (TextView)v.findViewById(R.id.newsTitleTextView);
         descriptionTextView = (TextView)v.findViewById(R.id.newsDescriptionTextView);
+        linkTextView = (TextView)v.findViewById(R.id.linkTextView);
         titleTextView.setText(newsRecord.getTitle());
         descriptionTextView.setText(newsRecord.getDescription());
         int color = ContextCompat.getColor(context, R.color.colorPrimaryDark);
