@@ -35,7 +35,7 @@
 
         <RadioButton
                 android:id="@+id/topRadioButton"
-                android:text="Top"
+                android:text="Science"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"

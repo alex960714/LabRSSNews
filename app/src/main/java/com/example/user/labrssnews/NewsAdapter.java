@@ -55,6 +55,8 @@ public class NewsAdapter extends BaseAdapter {
         descriptionTextView.setText(newsRecord.getDescription());
         int color = ContextCompat.getColor(context, R.color.colorPrimaryDark);
         descriptionTextView.setTextColor(color);
+        linkTextView.setTextColor(color);
+        linkTextView.setText(newsRecord.getLink());
         return v;
     }
 }

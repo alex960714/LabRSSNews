@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     public class NewsSource {
         private static final String BASE_PATH = "https://news.yandex.ru/";
         public static final String ALL = BASE_PATH + "index";
-        public static final String TOP = BASE_PATH + "index";
+        public static final String SCIENCE = BASE_PATH + "science";
         public static final String POLITICS = BASE_PATH + "politics";
         public static final String BUSINESS = BASE_PATH + "business";
         public static final String SPORT = BASE_PATH + "sport";
@@ -95,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
                 case "All":
                     downloadContent(ALL);
                     break;
-                case "Top":
-                    downloadContent(TOP);
+                case "Science":
+                    downloadContent(SCIENCE);
                     break;
                 case "Politics":
                     downloadContent(POLITICS);
