@@ -28,8 +28,4 @@ public class NewsRecord {
         return description;
     }
 
-    public Date getPublishedDate() {
-        return publishedDate;
-    }
-
 }
