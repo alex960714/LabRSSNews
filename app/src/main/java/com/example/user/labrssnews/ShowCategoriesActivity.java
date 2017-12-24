@@ -22,18 +22,11 @@ public class ShowCategoriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String category = getStatus();
-                Intent intent = new Intent(view.getContext(), MainActivity.class);
+                Intent intent = new Intent(ShowCategoriesActivity.this, MainActivity.class);
                 intent.putExtra("category", category);
                 startActivity(intent);
             }
         });
-
-    }
-
-    public void closePanel() {
-        Intent intent = new Intent();
-        setResult(RESULT_OK, intent);
-        finish();
     }
 
     public String getStatus() {

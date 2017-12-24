@@ -1,50 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:layout_marginBottom="8dp"
-              android:layout_marginTop="8dp">
+              android:layout_height="match_parent">
 
-    <ImageView
-            android:id="@+id/newsImage"
-            android:layout_width="157dp"
-            android:layout_height="90dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            app:srcCompat="@mipmap/ic_launcher" />
-
-    <LinearLayout
+    <TextView
+            android:id="@+id/newsTitleTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingBottom="8dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="16dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="News title"
+            android:textColor="@android:color/background_dark"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    <TextView
+            android:id="@+id/newsDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newsTitleTextView"
+            android:layout_alignStart="@+id/newsTitleTextView"
+            android:ellipsize="end"
+            android:maxLines="3"
             android:paddingTop="8dp"
-            android:weightSum="1">
+            android:text="News bla-bla-bla"
+            android:textSize="12sp" />
 
-        <TextView
-                android:id="@+id/newsTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="News title"
-                android:textColor="@android:color/background_dark"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newsDescriptionTextView"
+            android:layout_alignStart="@+id/newsDescriptionTextView"
+            android:id="@+id/linkTextView"
+            android:autoLink="web"
+            android:text="There is a link"
+            android:linksClickable="true"
+            android:layout_centerHorizontal="true" />
 
-        <TextView
-                android:id="@+id/newsDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="3"
-                android:paddingTop="8dp"
-                android:text="News bla-bla-bla"
-                android:textSize="12sp" />
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>
