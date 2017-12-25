@@ -7,13 +7,11 @@ public class NewsRecord {
     private String title;
     private String link;
     private String description;
-    private Date publishedDate;
 
     public NewsRecord(String title, String link, String description, Date publishedDate) {
         this.title = title;
         this.link = link;
         this.description = description;
-        this.publishedDate = publishedDate;
     }
 
     public String getTitle() {
